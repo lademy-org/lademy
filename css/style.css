@@ -487,7 +487,7 @@ pre {
 .row {
   display: -webkit-box;
   display: -ms-flexbox;
-  /* display: flex; */
+  display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   margin-right: -15px;
@@ -10114,3 +10114,11 @@ textarea.form-control {
    .seth{
      display: flex;
    }
+@media (max-width: 1199.98px) {
+  .seth{
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+}
+
