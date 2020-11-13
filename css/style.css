@@ -210,6 +210,11 @@ img {
   border-style: none;
 }
 
+.image{
+  height: 50% !important;
+  width: 50% !important;
+}
+
 svg {
   overflow: hidden;
   vertical-align: middle;
@@ -4749,6 +4754,10 @@ input[type="button"].btn-block {
   -ms-flex-pack: justify;
   justify-content: space-between;
 }
+.image {
+  height: 250px;
+  width: 400px;
+}
 
 .navbar-brand {
   display: inline-block;
@@ -4775,6 +4784,7 @@ input[type="button"].btn-block {
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
+  font-size: 100px;
 }
 .navbar-nav .nav-link {
   padding-right: 0;
@@ -10990,15 +11000,17 @@ h5,
 
 .ftco-navbar-light {
   background: transparent !important;
+  /* background: rgb(98, 98, 238) !important; */
   position: absolute;
   top: -8px;
   left: 0;
   right: 0;
   z-index: 3;
+  padding: 10px !important;
 }
 @media (max-width: 991.98px) {
   .ftco-navbar-light {
-    background: #000000 !important;
+    background: rgb(98, 98, 238) !important;
     position: relative;
     top: 0;
     padding-top: 0;
@@ -11343,7 +11355,7 @@ h5,
   position: relative;
 }
 .slider-text .subheading {
-  font-size: 14px; 
+  font-size: 14px;
   color: rgba(255, 255, 255, 0.8);
   font-weight: 700;
   text-transform: uppercase;
@@ -13150,6 +13162,24 @@ textarea.form-control {
   -webkit-animation: loader-dash 1.5s ease-in-out infinite;
   animation: loader-dash 1.5s ease-in-out infinite;
   stroke-linecap: round;
+}
+
+.green {
+  color: green;
+}
+
+.red {
+  color: red;
+}
+
+.list1,
+.list2 {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  font-size: large;
+  padding: 0;
+  margin: 10rem;
 }
 
 @-webkit-keyframes loader-rotate {
