@@ -13244,3 +13244,14 @@ textarea.form-control {
     padding: 0;
   }
 }
+
+@media screen and (max-width: 500px) /* Mobile */ {
+  .image {
+ 	position: absolute;
+ 	right: -138px;
+ 	top: -22px;
+ 	height: 30% !important;
+ 	width: 50% !important;
+}
+}
+
