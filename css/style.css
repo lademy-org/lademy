@@ -11056,6 +11056,14 @@ h5,
   font-weight: 500;
   opacity: 1 !important;
 }
+
+#image{
+position: absolute;
+left: 10%;
+top: 10px;
+width: 200px;
+height: 200px;
+}
 .ftco-navbar-light .navbar-nav > .nav-item > .nav-link:hover,
 .ftco-navbar-light .navbar-nav > .nav-item > .nav-link:focus {
   color: #fff;
