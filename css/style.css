@@ -13179,7 +13179,95 @@ textarea.form-control {
 .red {
   color: red;
 }
+/* .nalo{
+  display: flex;
+}
 
+
+@media (max-width: 1199.98px) {
+  .nalo {
+    display: flex; 
+  }
+} */
+
+
+
+      .container {
+        width: 100%;
+        height: 100%;
+      }
+      #list1 {
+        position: relative;
+        display: flex;
+        padding: 10px;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        flex-direction: row;
+      }
+
+      #list2 {
+        margin: 70px auto;
+        display: flex;
+        padding: 10px;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        flex-direction: row;
+      }
+
+      .btn {
+        padding: 20px 30px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        background: green;
+        color: white;
+        text-transform: uppercase;
+        display: flex;
+        margin: 0 auto;
+      }
+
+      .btn {
+        background: lime;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+      }
+
+      #list1 div {
+        background-color: tomato;
+        padding: 30px 40px;
+        margin: 5px;
+        cursor: pointer;
+        color: black;
+      }
+
+      #list2 div {
+        background-color: orange;
+        padding: 30px;
+        margin: 5px;
+        cursor: pointer;
+        color: black;
+      }
+
+      .green {
+        font-size: 40px;
+        color: white;
+        background-color: green;
+        width: fit-content;
+        margin: 50px auto;
+        text-align: center;
+      }
+
+      .red {
+        font-size: 40px;
+        color: white;
+        background-color: red;
+        width: fit-content;
+        margin: 50px auto;
+        text-align: center;
+      }
+
+
+
+    
 .list1,
 .list2 {
   display: flex;

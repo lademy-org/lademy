@@ -1,217 +1,110 @@
-
-
-
-$("#neuf").on("click", function () {
-  var neuf = $("#neuf");
-  $(".list2").on("click", "li", function () {
-    if (neuf.val() === $(this).val()) {
-      neuf.css("color", "green");
-      $(this).css("color", "green");
+var update = function () {
+  if ($("#list1 div").length == 0) {
+    if (score < 5) {
+      $("#list1").append("You made " + score + " Errors! Well Done");
+      $("#list1").addClass("green");
     } else {
-      neuf.css("color", "red");
-      $(this).css("color", "red");
+      $("#list1").append("You made " + score + " Errors! Try Again");
+      $("#list1").addClass("red");
     }
-  });
+  }
+};
+
+var reset = function () {
+  //for list1
+  var list1 = [
+    '<div value="one">1</div>',
+    '<div value="two">2</div>',
+    '<div value="three">3</div>',
+    '<div value="four">4</div>',
+    '<div value="five">5</div>',
+    '<div value="six">6</div>',
+    '<div value="seven">7</div>',
+    '<div value="eight">8</div>',
+    '<div value="nine">9</div>',
+    '<div value="ten">10</div>',
+  ];
+  $("#list1").empty();
+  $("#list1").append(list1);
+  $("#list1").removeClass("red");
+  $("#list1").removeClass("green");
+
+  //for list2
+  var list2 = [
+    '<div value="ten">dix</div>',
+    '<div value="seven">sept</div>',
+    '<div value="four">quatre</div>',
+    '<div value="six">six</div>',
+    '<div value="two">deux</div>',
+    '<div value="eight">huit</div>',
+    '<div value="five">cinq</div>',
+    '<div value="three">trois</div>',
+    '<div value="one">un</div>',
+    '<div value="nine">neuf</div>',
+  ];
+  $("#list2").empty();
+  $("#list2").append(list2);
+};
+
+// global variable; where the first selected number will be saved
+window.first_selected_number = null;
+
+var score = 0;
+
+// create a click listener on all <div> on list1
+$("#list1").on("click", "div", function () {
+  // this will remember the first number selected
+  window.first_selected_number = $(this).attr("value");
+  if (window.first_selected_number === window.second_selected_number) {
+    $(this).fadeOut(500, function () {
+      $(this).remove();
+      update();
+    });
+    $("#list2 div").each(function () {
+      var is_matching_number =
+        $(this).attr("value") === window.second_selected_number;
+      if (is_matching_number) {
+        $(this).fadeOut(500, function () {
+          $(this).remove();
+        });
+      }
+    });
+    // forgets the first and second numbers
+    window.first_selected_number = null;
+    window.second_selected_number = null;
+  } else if (window.first_selected_number && window.second_selected_number) {
+    $(this).css("background-color", "red");
+    score++;
+    window.first_selected_number = null;
+    window.second_selected_number = null;
+  }
 });
 
-$("#sept").on("click", function () {
-  var sept = $("#sept");
-  $(".list2").on("click", "li", function () {
-    if (sept.val() === $(this).val()) {
-      sept.css("color", "green");
-      $(this).css("color", "green");
-    } else {
-      sept.css("color", "red");
-      $(this).css("color", "red");
-    }
-  });
+window.second_selected_number = null;
+$("#list2").on("click", "div", function () {
+  // this will remember the second number selected
+  window.second_selected_number = $(this).attr("value");
+  if (window.first_selected_number === window.second_selected_number) {
+    $(this).fadeOut(500, function () {
+      $(this).remove();
+    });
+    $("#list1 div").each(function () {
+      var is_matching_number =
+        $(this).attr("value") === window.first_selected_number;
+      if (is_matching_number) {
+        $(this).fadeOut(500, function () {
+          $(this).remove();
+          update();
+        });
+      }
+    });
+    // forgets the first and second numbers
+    window.first_selected_number = null;
+    window.second_selected_number = null;
+  } else if (window.first_selected_number && window.second_selected_number) {
+    $(this).css("background-color", "red");
+    score++;
+    window.first_selected_number = null;
+    window.second_selected_number = null;
+  }
 });
-
-
-
-
-$("#trois").on("click", function () {
-  var trois = $("#trois");
-  $(".list2").on("click", "li", function () {
-    if (trois.val() === $(this).val()) {
-      trois.css("color", "green");
-      $(this).css("color", "green");
-    } else {
-      trois.css("color", "red");
-      $(this).css("color", "red");
-    }
-  });
-});
-
-
-
-$("#six").on("click", function () {
-  var six = $("#six");
-  $(".list2").on("click", "li", function () {
-    if (six.val() === $(this).val()) {
-      six.css("color", "green");
-      $(this).css("color", "green");
-    } else {
-      six.css("color", "red");
-      $(this).css("color", "red");
-    }
-  });
-});
-
-
-
-$("#cinq").on("click", function () {
-  var cinq = $("#cinq");
-  $(".list2").on("click", "li", function () {
-    if (cinq.val() === $(this).val()) {
-      cinq.css("color", "green");
-      $(this).css("color", "green");
-    } else {
-      cinq.css("color", "red");
-      $(this).css("color", "red");
-    }
-  });
-});
-
-
-
-
-$("#quatre").on("click", function () {
-  var quatre = $("#quatre");
-  $(".list2").on("click", "li", function () {
-    if (quatre.val() === $(this).val()) {
-      quatre.css("color", "green");
-      $(this).css("color", "green");
-    } else {
-      quatre.css("color", "red");
-      $(this).css("color", "red");
-    }
-  });
-});
-
-
-
-
-$("#un").on("click", function () {
-  var un = $("#un");
-  $(".list2").on("click", "li", function () {
-    if (un.val() === $(this).val()) {
-      un.css("color", "green");
-      $(this).css("color", "green");
-    } else {
-      un.css("color", "red");
-      $(this).css("color", "red");
-    }
-  });
-});
-
-
-
-
-$("#deux").on("click", function () {
-  var deux = $("#deux");
-  $(".list2").on("click", "li", function () {
-    if (deux.val() === $(this).val()) {
-      deux.css("color", "green");
-      $(this).css("color", "green");
-    } else {
-      deux.css("color", "red");
-      $(this).css("color", "red");
-    }
-  });
-});
-
-
-
-
-$("#huit").on("click", function () {
-  var huit = $("#huit");
-  $(".list2").on("click", "li", function () {
-    if (huit.val() === $(this).val()) {
-      huit.css("color", "green");
-      $(this).css("color", "green");
-    } else {
-      huit.css("color", "red");
-      $(this).css("color", "red");
-    }
-  });
-});
-
-//   var thursday = $("#thursday").val();
-//   if (thursday === "thursday") {
-//     $("#thursday").css("color", "green");
-//     score++;
-//   } else {
-//     $("#thursday").css("color", "red");
-//   }
-
-//   var saturday = $("#saturday").val();
-//   if (saturday === "saturday") {
-//     $("#saturday").css("color", "green");
-//     score++;
-//   } else {
-//     $("#saturday").css("color", "red");
-//   }
-
-//   var friday = $("#friday").val();
-//   if (friday === "friday") {
-//     $("#friday").css("color", "green");
-//     score++;
-//   } else {
-//     $("#friday").css("color", "red");
-//   }
-
-//   var sunday = $("#sunday").val();
-//   if (sunday === "sunday") {
-//     $("#sunday").css("color", "green");
-//     score++;
-//   } else {
-//     $("#sunday").css("color", "red");
-//   }
-
-//   var tuesday = $("#tuesday").val();
-//   if (tuesday === "tuesday") {
-//     $("#tuesday").css("color", "green");
-//     score++;
-//   } else {
-//     $("#tuesday").css("color", "red");
-//   }
-
-//   var wednesday = $("#wednesday").val();
-//   if (wednesday === "wednesday") {
-//     $("#wednesday").css("color", "green");
-//     score++;
-//   } else {
-//     $("#wednesday").css("color", "red");
-//   }
-
-//   var today = $("#today").val();
-//   if (today === "today") {
-//     $("#today").css("color", "green");
-//     score++;
-//   } else {
-//     $("#today").css("color", "red");
-//   }
-
-//   var avanthier = $("#avanthier").val();
-//   if (avanthier === "avanthier") {
-//     $("#avanthier").css("color", "green");
-//     score++;
-//   } else {
-//     $("#avanthier").css("color", "red");
-//   }
-
-//   var hier = $("#hier").val();
-//   if (hier === "hier") {
-//     $("#hier").css("color", "green");
-//     score++;
-//   } else {
-//     $("#hier").css("color", "red");
-//   }
-
-//   $(".message").append(score).css({
-//     color: "blue",
-//     margin: "0 auto",
-//     textAlign: "center",
-//   });
-// });
