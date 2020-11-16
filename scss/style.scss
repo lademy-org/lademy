@@ -2113,3 +2113,32 @@ textarea.form-control {
   }
 }
 
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: portrait) { 
+		.image {
+			display: none;
+		// 	position: absolute;
+		// 	right: -138px;
+		// 	/* left: 100px; */
+		// 	top: -22px;
+		// 	height: 30% !important;
+		// 	width: 50% !important;
+	}
+}
+
+// @media (min-width: 360px) {
+//   .image {
+//     display: none;
+//   }
+// }
+
+@media screen and (max-width: 500px) /* Mobile */ {
+  body {
+    display: 	none;
+  }
+}
+
+
